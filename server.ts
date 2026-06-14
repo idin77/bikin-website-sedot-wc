@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, GenerateVideosOperation } from "@google/genai";
+import * as cheerio from 'cheerio';
 
 async function startServer() {
   const app = express();
@@ -65,6 +66,56 @@ async function startServer() {
             close() { res.end(); },
           })
         );
+    } catch (error) {
+        res.status(500).json({ error: (error as Error).message });
+    }
+  });
+
+  app.post("/api/analyze-competitor", async (req, res) => {
+    const { competitorUrl, userUrl } = req.body;
+    try {
+        const response = await ai.models.generateContent({
+            model: "gemini-3.5-flash",
+            contents: `Analyze the competition between ${userUrl} and ${competitorUrl}. Compare their SEO strengths, focusing on septic services for septic systems in Karawang.`,
+        });
+        res.json({ analysis: response.text });
+    } catch (error) {
+        res.status(500).json({ error: (error as Error).message });
+    }
+  });
+
+  app.post("/api/seo-audit", async (req, res) => {
+    const { url } = req.body;
+    try {
+        const htmlRes = await fetch(url.startsWith('http') ? url : `https://${url}`);
+        const html = await htmlRes.text();
+        const $ = cheerio.load(html);
+        
+        let score = 0;
+        let findings = [];
+
+        if ($('title').text().includes('Karawang') || $('title').text().includes('Sedot WC')) {
+            score += 30;
+            findings.push("Judul halaman sudah mencantumkan kata kunci lokal.");
+        } else {
+            findings.push("Judul halaman tidak mencantumkan kata kunci lokal / Karawang.");
+        }
+
+        if ($('address').length > 0 || $('a[href^="tel:"]').length > 0) {
+            score += 40;
+            findings.push("Informasi NAP (Alamat/Telepon) terdeteksi.");
+        } else {
+            findings.push("Informasi NAP tidak terdeteksi secara struktural.");
+        }
+
+        if ($('script[type="application/ld+json"]').text().includes('LocalBusiness')) {
+            score += 30;
+            findings.push("Schema markup 'LocalBusiness' terdeteksi.");
+        } else {
+            findings.push("Schema markup 'LocalBusiness' tidak terdeteksi.");
+        }
+
+        res.json({ score, findings });
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
     }

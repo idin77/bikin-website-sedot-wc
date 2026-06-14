@@ -13,6 +13,9 @@ import { Benefits } from './components/Benefits';
 import { PortfolioSection } from './components/PortfolioSection';
 import { VideoTestimonials } from './components/VideoTestimonials';
 import { ClientResults } from './components/ClientResults';
+import { CompetitorAnalysis } from './components/CompetitorAnalysis';
+import { LocalSEOAudit } from './components/LocalSEOAudit';
+import { LocalSEOTips } from './components/LocalSEOTips';
 import { Features } from './components/Features';
 import { Testimonials } from './components/Testimonials';
 import { Metrics } from './components/Metrics';
@@ -106,6 +109,15 @@ export default function App() {
       </FadeInSection>
       <FadeInSection>
         <SEORankTracker />
+      </FadeInSection>
+      <FadeInSection>
+        <CompetitorAnalysis />
+      </FadeInSection>
+      <FadeInSection>
+        <LocalSEOAudit />
+      </FadeInSection>
+      <FadeInSection>
+        <LocalSEOTips />
       </FadeInSection>
       <FadeInSection>
         <Features />
