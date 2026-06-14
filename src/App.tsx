@@ -11,6 +11,8 @@ import { TrustBadges } from './components/TrustBadges';
 import { ProblemSolution } from './components/ProblemSolution';
 import { Benefits } from './components/Benefits';
 import { PortfolioSection } from './components/PortfolioSection';
+import { VideoTestimonials } from './components/VideoTestimonials';
+import { ClientResults } from './components/ClientResults';
 import { Features } from './components/Features';
 import { Testimonials } from './components/Testimonials';
 import { Metrics } from './components/Metrics';
@@ -74,6 +76,12 @@ export default function App() {
       </FadeInSection>
       <FadeInSection>
         <PortfolioSection />
+      </FadeInSection>
+      <FadeInSection>
+        <ClientResults />
+      </FadeInSection>
+      <FadeInSection>
+        <VideoTestimonials />
       </FadeInSection>
       <FadeInSection>
         <Metrics />

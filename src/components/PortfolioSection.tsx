@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Skeleton } from './Skeleton';
+import portfolio1 from '../assets/portfolio_1.png';
+import portfolio2 from '../assets/portfolio_2.png';
+import portfolio3 from '../assets/portfolio_3.png';
 
 const mockups = [
-  { title: "Layout Modern Berwarna Biru", desc: "Fokus pada kepercayaan dan profesionalisme dengan warna biru korporat." },
-  { title: "Layout Hijau & Segar", desc: "Ekspektasi bersih, higienis, dan terpercaya bagi lingkungan." },
-  { title: "Layout Minimalis Hitam-Putih", desc: "Desain elegan dan langsung fokus pada tombol tindakan (Chat)." },
+  { title: "Layout Modern Berwarna Biru", desc: "Fokus pada kepercayaan dan profesionalisme dengan warna biru korporat.", image: portfolio1 },
+  { title: "Layout Hijau & Segar", desc: "Ekspektasi bersih, higienis, dan terpercaya bagi lingkungan.", image: portfolio3 },
+  { title: "Layout Minimalis Hitam-Putih", desc: "Desain elegan dan langsung fokus pada tombol tindakan (Chat).", image: portfolio2 },
 ];
 
 export const PortfolioSection = () => {
@@ -30,9 +33,7 @@ export const PortfolioSection = () => {
               ))
             : mockups.map((m, i) => (
                 <div key={i} className="bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-xl shadow-lg overflow-hidden transition hover:scale-105">
-                  <div className="h-40 bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 italic transition-colors">
-                    [Mockup Desain {i + 1}]
-                  </div>
+                  <img src={m.image} alt={m.title} className="w-full h-40 object-cover" loading="lazy" />
                   <div className="p-6">
                     <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-400 mb-2">{m.title}</h3>
                     <p className="text-gray-600 dark:text-gray-400">{m.desc}</p>
