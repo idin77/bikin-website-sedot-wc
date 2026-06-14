@@ -1,0 +1,6 @@
+{
+  "name": "Jasa Pembuatan Website Sedot WC Karawang",
+  "description": "Layanan profesional pembuatan website untuk usaha sedot WC di Karawang untuk meningkatkan jangkauan dan order pelanggan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
