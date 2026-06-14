@@ -17,7 +17,6 @@ import { CompetitorAnalysis } from './components/CompetitorAnalysis';
 import { LocalSEOAudit } from './components/LocalSEOAudit';
 import { LocalSEOTips } from './components/LocalSEOTips';
 import { Features } from './components/Features';
-import { Testimonials } from './components/Testimonials';
 import { Metrics } from './components/Metrics';
 import { PartnerMarquee } from './components/PartnerMarquee';
 import { BlogSection } from './components/BlogSection';
@@ -133,9 +132,6 @@ export default function App() {
       </FadeInSection>
       <FadeInSection>
         <CaseStudySection />
-      </FadeInSection>
-      <FadeInSection>
-        <Testimonials />
       </FadeInSection>
       <FadeInSection>
         <FinalCTA />
