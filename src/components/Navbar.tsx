@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { LanguageToggle } from './LanguageToggle';
 
 export const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -26,12 +27,7 @@ export const Navbar = () => {
         <div className="flex gap-6 text-sm font-medium items-center">
             <a href="#layanan" className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">Layanan</a>
             <a href="#kontak" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">Hubungi Kami</a>
-            <button
-               onClick={() => setLang(lang === 'id' ? 'en' : 'id')}
-               className="px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-xs font-bold text-gray-700 dark:text-gray-200 transition-colors"
-            >
-              {lang.toUpperCase()}
-            </button>
+            <LanguageToggle lang={lang} toggle={() => setLang(lang === 'id' ? 'en' : 'id')} />
         </div>
       </div>
     </nav>
