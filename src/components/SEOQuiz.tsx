@@ -29,7 +29,7 @@ export const SEOQuiz = () => {
                 </div>
               </div>
             ))}
-            <button onClick={() => setShowResult(true)} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded transition">
+            <button onClick={() => setShowResult(true)} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded transition-all duration-200 hover:scale-[1.03] active:scale-[0.97]">
               Lihat Hasil
             </button>
           </div>
@@ -41,7 +41,7 @@ export const SEOQuiz = () => {
                 ? "Bagus! Bisnis Anda sudah memiliki fondasi digital yang kuat." 
                 : "Bisnis Anda berisiko kehilangan calon pelanggan. Website profesional akan membantu Anda mendominasi pencarian lokal di Karawang."}
             </p>
-            <a href="https://wa.me/628123456789" className="inline-block bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition">
+            <a href="https://wa.me/628123456789" className="inline-block bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition-all duration-200 hover:scale-[1.03] active:scale-[0.97]">
               Konsultasi Gratis Sekarang
             </a>
           </div>

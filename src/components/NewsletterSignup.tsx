@@ -23,7 +23,7 @@ export const NewsletterSignup = () => {
             className="flex-grow px-4 py-3 rounded text-gray-900 placeholder-gray-500"
             required
           />
-          <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded transition">
+          <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded transition-all duration-200 hover:scale-[1.03] active:scale-[0.97]">
             Daftar Sekarang
           </button>
         </form>

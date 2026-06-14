@@ -66,7 +66,7 @@ export const CallbackScheduler = () => {
                     <button 
                         type="submit" 
                         disabled={status === 'loading'}
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center"
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] flex items-center justify-center"
                     >
                         {status === 'loading' ? 'Mengirim...' : 'Kirim Permintaan'}
                     </button>

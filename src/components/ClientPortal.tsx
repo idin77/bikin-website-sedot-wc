@@ -39,7 +39,7 @@ export const ClientPortal = () => {
               required
             />
             {error && <p className="text-red-500 text-sm">{error}</p>}
-            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded transition">
+            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded transition-all duration-200 hover:scale-[1.03] active:scale-[0.97]">
               Masuk
             </button>
           </form>

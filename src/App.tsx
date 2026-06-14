@@ -29,6 +29,8 @@ import { CaseStudySection } from './components/CaseStudySection';
 import { FinalCTA } from './components/FinalCTA';
 import { NewsletterSignup } from './components/NewsletterSignup';
 import { WhatsAppFAB } from './components/WhatsAppFAB';
+import { ShareWidget } from './components/ShareWidget';
+import { ScrollToTop } from './components/ScrollToTop';
 import { LiveChatWidget } from './components/LiveChatWidget';
 import { DarkModeToggle } from './components/DarkModeToggle';
 import { ServiceAreaMap } from './components/ServiceAreaMap';
@@ -125,6 +127,8 @@ export default function App() {
         &copy; {new Date().getFullYear()} Jasa Pembuatan Website Sedot WC Karawang.
       </footer>
       <WhatsAppFAB />
+      <ShareWidget />
+      <ScrollToTop />
       <LiveChatWidget />
     </div>
   );
